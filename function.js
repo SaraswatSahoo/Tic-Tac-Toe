@@ -11,48 +11,33 @@ let WinProb = [
     [3,5,7]
 ];
 
-let win = false;
-
 function checkWin(){
+    let player;
     for(let j=0;j<8;j++){
         let x = 0;
         let o = 0;
         for(let k = 0;k < 3; k++){
             let btn = document.querySelector(`.btn${WinProb[j][k]}`).innerHTML;
-            console.log(btn);
             if(btn === "X") x++;
             else if(btn === "O") o++;
         }
-        if(x == 3) return 'X';
-        else if(o == 3) return 'O';
+        if(x == 3)  {player = "X"; break;}
+        else if(o == 3) {player = "O"; break;}
     }
-    return 0;
+    return player;
 }
 
 function play(btnNum){
-    for(let i = 1;i<=9;i++){
-
-        document.querySelector(`.btn${btnNum}`).innerHTML = turn;
-        if(turn === "X"){
-            turn = "O";
-        }
-        else{
-            turn = "X";
-        }
-        document.querySelector(`.btn${btnNum}`).disabled = true;
-        
-        let playerWin = checkWin();
-        if(playerWin === 'X'){
-            document.querySelector(".status").innerHTML = `${playerWin} is the Winner`;
-        }
-        else if(playerWin === 'O'){
-            document.querySelector(".status").innerHTML = `${playerWin} is the Winner`;
-        }
-        else{
-            continue;
-        }
+    let btn = document.querySelector(`.btn${btnNum}`);
+    if (btn.innerHTML !== "") return; // If the button is already filled, do nothing
+    btn.innerHTML = turn;
+    btn.disabled = true;
+    
+    let playerWin = checkWin();
+    if(playerWin === 'X' || playerWin === 'O'){
+        document.querySelector(".status").innerHTML = `${playerWin} is the Winner`;
+    } else {
+        // Switch turns
+        turn = (turn === "X") ? "O" : "X";
     }
 }
-
-
-
