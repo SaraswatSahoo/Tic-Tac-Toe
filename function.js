@@ -29,7 +29,6 @@ function checkWin(){
 
 function play(btnNum){
     let btn = document.querySelector(`.btn${btnNum}`);
-    if (btn.innerHTML !== "") return;
     btn.innerHTML = turn;
     btn.disabled = true;
     
