@@ -29,7 +29,7 @@ function checkWin(){
 
 function play(btnNum){
     let btn = document.querySelector(`.btn${btnNum}`);
-    if (btn.innerHTML !== "") return; // If the button is already filled, do nothing
+    if (btn.innerHTML !== "") return;
     btn.innerHTML = turn;
     btn.disabled = true;
     
@@ -37,7 +37,6 @@ function play(btnNum){
     if(playerWin === 'X' || playerWin === 'O'){
         document.querySelector(".status").innerHTML = `${playerWin} is the Winner`;
     } else {
-        // Switch turns
         turn = (turn === "X") ? "O" : "X";
     }
 }
