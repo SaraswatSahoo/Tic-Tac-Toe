@@ -1,4 +1,5 @@
 let turn = "X";
+let count = 0;
 
 let WinProb = [
     [1,2,3],
@@ -31,11 +32,18 @@ function play(btnNum){
     let btn = document.querySelector(`.btn${btnNum}`);
     btn.innerHTML = turn;
     btn.disabled = true;
-    
     let playerWin = checkWin();
     if(playerWin === 'X' || playerWin === 'O'){
         document.querySelector(".status").innerHTML = `${playerWin} is the Winner`;
+        for(let i=1;i<=9;i++){
+            document.querySelector(`.btn${i}`).disabled = true;
+        }
+        exit(0);
     } else {
         turn = (turn === "X") ? "O" : "X";
+    }
+    count ++;
+    if(count == 9){
+        document.querySelector(".status").innerHTML = `The match is draw`;
     }
 }

@@ -12,11 +12,7 @@ h1{
 }
 body{
     height: 100vh;
-    background-color: aliceblue;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 50px;
 }
 button{
     height: 100px;
@@ -47,7 +43,7 @@ button{
     height: 50px;
     font-size: 20px;
     border: none;
-    border: 2px solid rgb(1, 1, 1);
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,6 +51,11 @@ button{
     background-color: white;
     color: black;
     text-decoration: none;
+    margin: 20px;
+}
+.play-again:hover{
+    background-color: black;
+    color: white;
 }
 
 @media screen and (max-width: 600px) {
@@ -66,4 +67,44 @@ button{
     h1{
         font-size: 40px;
     }
+}
+
+.play-now{
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    margin: 20px;
+}
+.play-now:hover{
+    background-color: black;
+    color: white;
+}
+
+.container{
+    height: 100vh;
+    background-image: url("riho-kroll-m4sGYaHYN5o-unsplash.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.start{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
